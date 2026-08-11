@@ -475,7 +475,7 @@ export class InternalFieldApi<
         : null
     this._errorVisibility = errorVisibility
     this._errorBoundary = errorBoundary ?? false
-    this._atoms = {}
+    this._atoms = {meta: undefined, store: undefined}
     this._listeners = null
     this._watchingFields = null
     this._listenToFields = null

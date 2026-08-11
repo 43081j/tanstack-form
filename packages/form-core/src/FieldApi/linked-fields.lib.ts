@@ -36,7 +36,11 @@ function toWatcherKey(watcherIndex: number, name: string): WatcherKey {
   return `${watcherIndex}:${name}`
 }
 function ofWatcherKey(key: WatcherKey): [watcherIndex: number, name: string] {
-  const [watcherIndex, name] = key.split(':') as [number, string]
+  const separatorIndex = key.indexOf(':')
+  const [watcherIndex, name] = [
+    key.slice(0, separatorIndex),
+    key.slice(separatorIndex + 1),
+  ]
   return [Number(watcherIndex), name]
 }
 
